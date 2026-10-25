@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Buat Luna ♡</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400&display=swap">
+<style>
+:root{--bg:#1a0a14;--bg2:#2b0f20;--card:rgba(255,255,255,.06);--line:rgba(255,200,215,.16);--ink:#f7e9ee;--soft:#d9b8c4;--rose:#ff9db8;--gold:#f2c46d;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:"Jost",system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;background:radial-gradient(120% 80% at 50% 0%,var(--bg2),var(--bg) 70%) fixed;color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.75;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg2)}
+.petals{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.petal{position:absolute;top:-30px;width:12px;height:16px;background:radial-gradient(circle at 30% 30%,#ffd0dd,#e0709a);border-radius:70% 0 70% 0;opacity:.55;animation:fall linear infinite}
+@keyframes fall{to{transform:translate(60px,110vh) rotate(540deg)}}
+@media(prefers-reduced-motion:reduce){.petal{animation:none;display:none}.pulse{animation:none!important}}
+.screen{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 22px;text-align:center}
+.hide{display:none!important}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.15}
+.script{font-family:var(--serif);font-style:italic;color:var(--rose);font-size:1.15rem}
+/* lock */
+.lock{width:min(340px,100%);padding:28px 22px;border:1px solid var(--line);border-radius:28px;background:var(--card);backdrop-filter:blur(8px)}
+.dots{display:flex;gap:12px;justify-content:center;margin:20px 0 22px}
+.dots i{width:11px;height:11px;border-radius:50%;border:1px solid var(--rose)}
+.dots i.on{background:var(--rose)}
+.pad{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:240px;margin:0 auto}
+.pad button{aspect-ratio:1;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.07);color:var(--ink);font:400 1.3rem var(--sans);cursor:pointer}
+.pad button:active{background:rgba(255,157,184,.3)}
+.pad button:focus-visible,.gift:focus-visible,.fl:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.shake{animation:sh .4s}
+@keyframes sh{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.hint{font-size:.85rem;color:var(--soft);margin:18px 0 0}
+/* gift */
+.gift{font-size:6rem;background:none;border:0;cursor:pointer;line-height:1;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08) rotate(-3deg)}}
+/* content */
+main{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:56px 22px 90px}
+.sec{margin-top:72px;text-align:center}
+.title{font-size:clamp(2.2rem,9vw,3.2rem)}
+.title em{color:var(--rose)}
+.letter p{text-align:left;margin:0 0 1.1em;color:#f0dde4}
+.card{border:1px solid var(--line);background:var(--card);border-radius:22px;padding:22px 20px;margin-top:16px;text-align:left}
+.card h3{font-size:1.45rem;margin-bottom:6px}
+.card p{margin:0;color:var(--soft)}
+.card .ic{font-size:1.5rem}
+/* garden */
+.garden{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:26px 0 14px}
+.fl{background:none;border:0;font-size:1.9rem;cursor:pointer;padding:6px 0;transition:transform .2s}
+.fl.done{opacity:.45}
+.fl:active{transform:scale(1.3)}
+.wish{min-height:92px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.4rem;font-style:italic;color:var(--ink);padding:8px 10px}
+.count{font-size:.85rem;color:var(--soft)}
+/* photos */
+.ph{position:relative;overflow:hidden;aspect-ratio:4/5;border:1.5px dashed var(--line);border-radius:20px;display:flex;align-items:center;justify-content:center;color:var(--soft);font-size:.9rem;margin-top:16px;background:rgba(255,255,255,.03)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cap{font-family:var(--serif);font-style:italic;color:var(--rose);margin-top:6px}
+.end{font-size:1.9rem;font-family:var(--serif)}
+.tl{border-left:1px solid var(--gold);margin-left:6px;padding-left:14px}
+.song{padding:14px 16px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.07);color:var(--ink);font:400 1rem var(--sans);text-align:left;cursor:pointer}
+.song:active{background:rgba(255,157,184,.3)}.song:focus-visible,.mus:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.mus{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:5;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(43,15,32,.85);color:var(--rose);font-size:1.2rem;cursor:pointer}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .9s,transform .9s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<div class="petals" id="petals" aria-hidden="true"></div>
+<audio id="aud" loop></audio>
+<button class="mus hide" id="mus" type="button" aria-label="Putar atau jeda musik">♪</button>
+
+<section class="screen" id="songScr">
+  <div class="lock">
+    <div style="font-size:1.8rem">🎵</div>
+    <div class="script" style="margin-top:6px">sebelum masuk, Luna</div>
+    <h2 style="font-size:1.7rem;margin-top:6px">Pilih lagu buat nemenin kamu</h2>
+    <div id="songs" style="margin-top:20px;display:grid;gap:10px"></div>
+  </div>
+</section>
+
+<section class="screen hide" id="lock">
+  <div class="lock">
+    <div style="font-size:1.8rem">🔐</div>
+    <div class="script" style="margin-top:6px">khusus buat kamu, Luna</div>
+    <h2 style="font-size:1.7rem;margin-top:6px">Masukin kode rahasia kita</h2>
+    <div class="dots" id="dots"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="pad" id="pad"></div>
+    <p class="hint">6 digit: tanggal ulang tahun kamu (hhbbtt) ✨</p>
+  </div>
+</section>
+
+<section class="screen hide" id="giftScr">
+  <button class="gift" id="gift" aria-label="Buka kado">🎁</button>
+  <p class="script" style="margin-top:18px">tap kadonya ya, sayang ✨</p>
+</section>
+
+<main class="hide" id="main">
+  <section class="letter" style="text-align:center">
+    <div class="script">sebuah surat kecil dari aku</div>
+    <h1 class="title" style="margin-top:10px">Maaf ya, sayang,<br><em>aku telat.</em></h1>
+    <div style="height:28px"></div>
+    <p>Luna, tanggal 16 Oktober kemarin hari spesial kamu, dan aku lupa ngucapin. Bukan karena kamu nggak penting. Justru kamu orang yang paling pengen aku jadiin yang pertama, dan aku malah kelewat. Aku nyesel banget.</p>
+    <p>Aku nggak mau bikin alasan. Aku cuma mau bilang maaf yang tulus karena udah bikin kamu nunggu di hari yang harusnya paling kamu rayain. Kalau kemarin kamu sempet sedih atau kecewa, itu salah aku, dan aku ngerti.</p>
+    <p>Makanya aku bikin ini. Ucapan ini telat, tapi isinya nggak telat sedikit pun. Aku sayang kamu, dan hari ini aku mau ngerayain kamu dengan benar.</p><p>Honestly, sayang, aku ngerasa bersalah banget. Di hari kamu lahir, harusnya aku yang jadi orang pertama yang ngucapin, bukan yang ketinggalan. Aku tau chat kamu pasti udah penuh ucapan dari orang lain, tapi ucapan dari aku itu beda buat aku, dan aku malah kelewat.</p><p>Aku nggak mau kamu mikir ini karena kamu nggak berarti. It’s the exact opposite. Kamu terlalu berarti sampai aku pengen ngasih yang terbaik, dan ternyata cara terbaiknya bukan nunda, tapi hadir tepat waktu. That’s a lesson I’ll never forget.</p><p>Jadi tolong baca ini pelan-pelan ya. Aku udah siapin semuanya buat kamu dari awal sampai akhir: ada cerita kita, ada alasan kenapa kamu pantas dirayain, ada doa-doa kecil buat kamu. Semoga ini bisa sedikit ngegantiin hari yang kemarin aku lewatin.</p>
+  </section>
+
+  <section class="sec">
+    <div style="font-size:2.2rem">🎂</div>
+    <div class="script" style="margin-top:8px">buat hari yang kemarin kelewat</div>
+    <h2 class="title">Happy Birthday,<br><em>Luna.</em></h2>
+    <div class="script" style="margin-top:10px">selamat sweet seventeen, sayang</div>
+    <div style="height:22px"></div>
+    <div class="letter">
+      <p>Tujuh belas tahun. Semoga umur baru ini ngebawa kamu ke hal-hal baik: tawa yang lebih sering, mimpi yang pelan-pelan jadi nyata, dan orang-orang yang tulus sayang sama kamu.</p>
+      <p>Makasih udah jadi kamu, yang bikin hari-hariku lebih berwarna. Aku bangga banget bisa nemenin kamu di umur yang spesial ini.</p><p>Seventeen itu angka yang spesial, Luna. It’s that age where everything feels new: mimpi makin gede, langkah makin berani, dan kamu makin jadi versi terbaik dari dirimu. Aku seneng banget bisa liat kamu tumbuh kayak gini.</p><p>Aku nggak minta banyak-banyak di hari ini. Aku cuma pengen kamu tau kalau kamu itu worth it buat semua hal baik. Dan aku harap tahun ini bawa lebih banyak happiness buat kamu. Every time aku liat kamu senyum, rasanya pengen banget bilang thank you for being in my life.</p><p>Happy Birthday, Happy Sweet Seventeen, sayang. Maaf telat, tapi sayangku nggak pernah telat. 🤍</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="script">a little bit of us</div><h2 class="title">Cerita <em>Kita</em></h2><div class="tl"><div class="card"><div class="script" style="font-size:1rem">the first hello</div><h3>Awal Mula Kita</h3><p>Awalnya cuma kenal biasa, nggak ada yang nyangka bakal jadi sespesial ini. Tapi somehow, dari situ semuanya pelan-pelan berubah, dan kamu jadi bagian penting di hidup aku.</p></div><div class="card"><div class="script" style="font-size:1rem">the moment I knew</div><h3>Saat Aku Sadar Kamu Beda</h3><p>Ada satu titik di mana aku sadar, ada yang beda dari kamu. Cara kamu ngomong, cara kamu ketawa, bahkan hal kecil yang kamu lakuin. Dan aku mulai nggak bisa berhenti mikirin kamu.</p></div><div class="card"><div class="script" style="font-size:1rem">through the hard days</div><h3>Momen Yang Nguji Kita</h3><p>Kita nggak selalu mulus, sayang. Ada salah paham, ada aku yang salah (termasuk kemarin). Tapi setiap kali, kamu tetep di sini, dan itu yang bikin aku makin sayang.</p></div><div class="card"><div class="script" style="font-size:1rem">right here, right now</div><h3>Sampai Hari Ini</h3><p>Dari dulu sampai sekarang, I’m so grateful semua cerita ini ada kamu. Every chapter bareng kamu selalu jadi favorit aku, and I can’t wait for the next ones.</p></div></div></section><section class="sec"><div class="script">kenapa kamu pantas dirayain</div>
+    <h2 class="title">Tentang <em>kamu</em></h2>
+    <div class="card"><div class="ic">🌹</div><h3>Kamu selalu ada</h3><p>Di hari senang maupun capek, kamu selalu ada tanpa aku minta.</p></div>
+    <div class="card"><div class="ic">💫</div><h3>Kamu bikin aku tenang</h3><p>Di dekat kamu, aku ngerasa nggak perlu jadi siapa-siapa selain diri sendiri.</p></div>
+    <div class="card"><div class="ic">💗</div><h3>Kamu cuma satu</h3><p>Nggak ada yang kayak kamu, dan aku beruntung banget bisa kenal kamu.</p></div><div class="card"><div class="ic">🌷</div><h3>Kamu bikin hariku berwarna</h3><p>Hal-hal kecil dari kamu bisa bikin mood aku langsung bagus. Kamu nggak sadar, tapi kamu sepengaruh itu.</p></div><div class="card"><div class="ic">✨</div><h3>Kamu selalu support aku</h3><p>Kamu percaya sama aku bahkan pas aku sendiri ragu. Thank you for that, sayang.</p></div><div class="card"><div class="ic">😆</div><h3>Kamu bikin aku ketawa</h3><p>Tingkah dan celotehanmu itu hiburan favoritku, honestly. Hari-hariku jauh lebih seru karena ada kamu.</p></div>
+  </section>
+
+  <section class="sec">
+    <div class="script">17 doa kecil buat kamu</div>
+    <h2 class="title">Taman <em>Harapan</em></h2>
+    <div class="garden" id="garden"></div>
+    <div class="wish" id="wish">Tap satu bunga ya 🌷</div>
+    <div class="count" id="count">0 dari 17 harapan terbuka</div>
+  </section>
+
+  <section class="sec">
+    <div class="script">kenangan kita</div>
+    <h2 class="title">Foto-foto <em>kamu</em></h2>
+    <div class="ph">foto 1 (taruh fotomu di sini)<img src="foto1.jpg" data-n="1" alt="Foto Luna" onerror="var e=['jpeg','png','webp','JPG','PNG'],i=+(this.dataset.i||0);if(i<e.length){this.dataset.i=i+1;this.src='foto'+this.dataset.n+'.'+e[i]}else this.remove()"></div><div class="cap">senyum favoritku</div>
+    <div class="ph">foto 2 (taruh fotomu di sini)<img src="foto2.jpg" data-n="2" alt="Foto Luna" onerror="var e=['jpeg','png','webp','JPG','PNG'],i=+(this.dataset.i||0);if(i<e.length){this.dataset.i=i+1;this.src='foto'+this.dataset.n+'.'+e[i]}else this.remove()"></div><div class="cap">kita berdua</div>
+    <div class="ph">foto 3 (taruh fotomu di sini)<img src="foto3.jpg" data-n="3" alt="Foto Luna" onerror="var e=['jpeg','png','webp','JPG','PNG'],i=+(this.dataset.i||0);if(i<e.length){this.dataset.i=i+1;this.src='foto'+this.dataset.n+'.'+e[i]}else this.remove()"></div><div class="cap">alasan aku seneng</div>
+    <div class="ph">foto 4 (taruh fotomu di sini)<img src="foto4.jpg" data-n="4" alt="Foto Luna" onerror="var e=['jpeg','png','webp','JPG','PNG'],i=+(this.dataset.i||0);if(i<e.length){this.dataset.i=i+1;this.src='foto'+this.dataset.n+'.'+e[i]}else this.remove()"></div><div class="cap">kenangan favoritku</div>
+  </section>
+
+  <section class="sec">
+    <div style="font-size:2rem">🌸 🌷 🌸</div>
+    <p class="end" style="margin:14px 0 4px">Sekali lagi, maaf ya sayang,<br>dan happy birthday,<br>selamat sweet seventeen.</p>
+    <p class="script">dengan sayang, selalu ♡</p>
+  </section>
+</main>
+
+<script>
+(function(){
+  var CODE="161009";
+  var $=function(i){return document.getElementById(i)};
+  function load(base,i){var e=["mp3","MP3","m4a","wav","ogg"];if(i>=e.length)return;au.onerror=function(){load(base,i+1)};au.src=base+"."+e[i];au.play().catch(function(){})}
+  var SONGS=[{t:"Penjaga hati",s:"lagu1"},{t:"To the bone",s:"lagu2"},{t:"Love story",s:"lagu3"}],au=$("aud"),sl=$("songs");
+  SONGS.forEach(function(x){var b=document.createElement("button");b.type="button";b.className="song";b.textContent="♪  "+x.t;
+    b.onclick=function(){if(x.s){load(x.s,0)}$("songScr").classList.add("hide");$("lock").classList.remove("hide");$("mus").classList.remove("hide")};sl.appendChild(b)});
+  $("mus").onclick=function(){if(!au.getAttribute("src"))return;if(au.paused){au.play().catch(function(){})}else{au.pause()}};
+  var pe=$("petals");
+  for(var i=0;i<22;i++){var p=document.createElement("span");p.className="petal";
+    p.style.left=Math.random()*100+"%";p.style.animationDuration=(9+Math.random()*10)+"s";
+    p.style.animationDelay=(-Math.random()*14)+"s";p.style.transform="scale("+(.6+Math.random()*.9)+")";pe.appendChild(p)}
+  var val="",pad=$("pad"),dots=$("dots").children;
+  function render(){for(var i=0;i<6;i++)dots[i].className=i<val.length?"on":""}
+  function key(k){
+    if(k==="del"){val=val.slice(0,-1);render();return}
+    if(val.length>=6)return;val+=k;render();
+    if(val.length===6){
+      if(val===CODE){setTimeout(function(){$("lock").classList.add("hide");$("giftScr").classList.remove("hide");window.scrollTo(0,0)},250)}
+      else{var l=document.querySelector(".lock");l.classList.add("shake");setTimeout(function(){l.classList.remove("shake");val="";render()},450)}
+    }
+  }
+  ["1","2","3","4","5","6","7","8","9","","0","del"].forEach(function(k){
+    var b=document.createElement("button");b.type="button";
+    if(k===""){b.style.visibility="hidden"}else{b.textContent=k==="del"?"⌫":k;b.setAttribute("aria-label",k==="del"?"Hapus":k);b.onclick=function(){key(k)}}
+    pad.appendChild(b)});
+  document.addEventListener("keydown",function(e){if($("lock").classList.contains("hide"))return;
+    if(/^[0-9]$/.test(e.key))key(e.key);else if(e.key==="Backspace")key("del")});
+  $("gift").onclick=function(){$("giftScr").classList.add("hide");$("main").classList.remove("hide");window.scrollTo(0,0)};
+  var W=["Semoga kamu selalu sehat dan kuat.","Semoga senyummu nggak pernah pudar.","Semoga mimpi-mimpimu satu per satu jadi nyata.","Semoga kamu dikelilingi orang yang tulus.","Semoga nilai dan ujianmu lancar terus.","Semoga kamu selalu berani jadi diri sendiri.","Semoga capekmu selalu ada yang ngertiin.","Semoga tiap hari ada alasan buat ketawa.","Semoga kamu makin percaya diri.","Semoga rezekimu lancar dan berkah.","Semoga kamu nggak pernah ngerasa sendirian.","Semoga hal-hal baik terus nyamperin kamu.","Semoga kamu makin dewasa tanpa kehilangan manisnya.","Semoga semua usahamu ada hasilnya.","Semoga kamu selalu ngerasa disayang.","Semoga tujuh belasmu jadi tahun terbaik.","Dan semoga kita bisa terus jalan bareng. Aku sayang kamu."];
+  var E=["🌹","🌷","🌸","🌺","🌻","🌼","💐","🌹","🌷","🌸","🌺","🌻","🌼","💐","🌹","🌷","🌸"];
+  if(window.IntersectionObserver){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.15});document.querySelectorAll(".letter p,.card,.ph").forEach(function(x){x.classList.add("rv");io.observe(x)})}
+  var g=$("garden"),opened={},n=0;
+  E.forEach(function(e,i){var b=document.createElement("button");b.type="button";b.className="fl";b.textContent=e;b.setAttribute("aria-label","Harapan ke-"+(i+1));
+    b.onclick=function(){$("wish").textContent=W[i];if(!opened[i]){opened[i]=1;n++;b.classList.add("done");$("count").textContent=n+" dari 17 harapan terbuka"}};
+    g.appendChild(b)});
+})();
+</script>
+</body>
+</html>
